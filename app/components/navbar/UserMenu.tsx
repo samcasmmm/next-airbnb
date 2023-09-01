@@ -37,6 +37,7 @@ const UserMenu = (props: Props) => {
           <div className='flex flex-col cursor-pointer'>
             <>
               <MenuItem label='Login' onClick={() => {}} />
+              <MenuItem label='SignUp' onClick={() => {}} />
             </>
           </div>
         </div>
