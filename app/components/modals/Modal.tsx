@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface IModalProps {
   isOpen?: boolean;
@@ -13,7 +15,32 @@ interface IModalProps {
   secondaryLabel?: string;
 }
 
-const Modal: React.FC<IModalProps> = ({ isOpen }) => {
+const Modal: React.FC<IModalProps> = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  title,
+  body,
+  footer,
+  actionLabel,
+  disabled,
+  secondaryAction,
+  secondaryLabel,
+}) => {
+  const [showModal, setShowModal] = useState(isOpen);
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
+  const handleClose = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+    setShowModal(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [disabled, onClose]);
   return <div>modal</div>;
 };
 
