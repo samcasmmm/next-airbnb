@@ -41,7 +41,32 @@ const Modal: React.FC<IModalProps> = ({
       onClose();
     }, 300);
   }, [disabled, onClose]);
-  return <div>modal</div>;
+
+  const handleSubmit = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+    onSubmit();
+  }, [disabled, onSubmit]);
+
+  const handleSecondary = useCallback(() => {
+    if (disabled || secondaryAction) {
+      return;
+    }
+    secondaryAction();
+  }, [disabled, secondaryAction]);
+
+  if (!isOpen) {
+    return null;
+  }
+
+  return (
+    <>
+      <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800/70'>
+        <div className='relative w-full md:w-4/6 lg:w-3/6 xl:h-2/5 my-6 mx-auto md:h-auto'></div>
+      </div>
+    </>
+  );
 };
 
 export default Modal;
