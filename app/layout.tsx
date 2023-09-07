@@ -26,12 +26,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={fontNunito.className}>
         <Navbar />
-        <Modal
-          isOpen
-          title='hellow'
-          actionLabel='Submit'
-          secondaryAction={() => {}}
-        />
+        <Modal isOpen title='hellow' actionLabel='Submit' />
         {children}
       </body>
     </html>
