@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={fontNunito.className}>
         <Navbar />
-        <Modal isOpen />
+        <Modal isOpen title='hellow' />
         {children}
       </body>
     </html>
