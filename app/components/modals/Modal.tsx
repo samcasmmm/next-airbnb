@@ -84,12 +84,12 @@ const Modal: React.FC<IModalProps> = ({
                 <div className='flex flex-row items-center gap-4 w-full'>
                   <Button
                     disabled={disabled}
-                    label={actionLabel}
+                    label={secondaryActionLabel}
                     onClick={handleSubmit}
                   />
                   <Button
                     disabled={disabled}
-                    label={se}
+                    label={actionLabel}
                     onClick={handleSubmit}
                   />
                 </div>
