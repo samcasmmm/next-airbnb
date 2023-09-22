@@ -7,6 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import axios from 'axios';
 import Modal from './Modal';
+import Heading from './../Heading';
 
 type Props = {};
 
@@ -39,6 +40,12 @@ const RegisterModal = (props: Props) => {
         setIsLoading(false);
       });
   };
+
+  const bodyContent = (
+    <div className='flex'>
+      <Heading />
+    </div>
+  );
   return (
     <div>
       <Modal
@@ -48,6 +55,7 @@ const RegisterModal = (props: Props) => {
         actionLabel='Continue'
         onClose={registerModal.onClose}
         onSubmit={handleSubmit(onSubmit)}
+        body={bodyContent}
       />
     </div>
   );
