@@ -31,11 +31,12 @@ const Input: React.FC<InputProps> = ({
         <BiRupee size={24} className='text-neutral-700 absolute top-5 left-2' />
       )}
       <input
-        type='text'
         id={id}
         disabled={disabled}
         {...register(id, { required })}
         placeholder=''
+        type={type}
+        className=''
       />
     </div>
   );
