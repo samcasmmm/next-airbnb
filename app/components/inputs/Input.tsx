@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
   error,
 }) => {
   return (
-    <div className='w-full relative'>
+    <div className='w-full relative mt-2'>
       {formatPrice && (
         <BiRupee size={24} className='text-neutral-700 absolute top-5 left-2' />
       )}
@@ -36,7 +36,12 @@ const Input: React.FC<InputProps> = ({
         {...register(id, { required })}
         placeholder=''
         type={type}
-        className=''
+        className={`
+        peer w-full p-4 pt-6 font-light bg-white border-2 rounded-md outline-none transition disabled:opacity-70 disabled:cursor-not-allowed
+        ${formatPrice ? 'pl-9' : 'pl-4'}
+        ${error[id] ? 'border-rose-500' : 'border-neutral-300'}
+        ${error[id] ? 'focus:border-rose-500' : 'focus:border-black'}
+        `}
       />
     </div>
   );
