@@ -8,7 +8,7 @@ import useRegisterModal from '@/app/hooks/useRegisterModal';
 import axios from 'axios';
 import Modal from './Modal';
 import Heading from '../Heading';
-import { Input } from '../inputs/Input';
+import Input from '../inputs/Input';
 
 type Props = {};
 
@@ -45,7 +45,14 @@ const RegisterModal = (props: Props) => {
   const bodyContent = (
     <div className='flex'>
       <Heading title='Welcome to Airbnb' subtitle='Create an account' />
-      <Input />
+      <Input
+        id='email'
+        label='Email'
+        disabled={isLoading}
+        register={register}
+        error={errors}
+        required
+      />
     </div>
   );
   return (
