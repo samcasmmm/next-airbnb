@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
   error,
 }) => {
   return (
-    <div className='w-full relative mt-2'>
+    <div className='w-full relative mt-4'>
       {formatPrice && (
         <BiRupee size={24} className='text-neutral-700 absolute top-5 left-2' />
       )}
